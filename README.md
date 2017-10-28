@@ -28,6 +28,20 @@ All of the rubrics are self explained in the jupyter notebook. So I will focus o
 
 What I Found
 ------------
+
+[//]: # (Image References)
+
+[image1]: ./writeup_pics/Long_Valley_Imgur.gif "optimizer"
+[image2]: ./writeup_pics/network.png "Neural Network"
+[image3]: ./writeup_pics/color_code.png "Colors"
+[image4]: ./writeup_pics/overview.png "overview"
+[image5]: ./writeup_pics/validation_acc.png
+[image6]: ./writeup_pics/conv1.png
+[image7]: ./writeup_pics/train_acc.png
+[image8]: ./writeup_pics/validation_loss.png
+[image9]: ./writeup_pics/conv1_structure.png
+[image0]: ./writeup_pics/train_loss.png
+
 * Stuck
 
 In the beginning, I thought the project would be simple, considering I have done similar project before.
@@ -40,7 +54,7 @@ During trouble shooting my network, I also read a lot of examples from other peo
 
 1. Optimizer
 
-![alt text][./writeup_pics/Long_Valley_Imgur.gif]
+![alt text][image1]
 
 Above is an amazing demonstration on how different optimizer behave. What I saw was the Adadelta optimizer was very good at dealing with some case that the network was hard to train. So I switched to Adadelta optimizer. Magic happened! Although in the beginning, it was also not learning, but after quite a few epochs, suddenly it start to learn, and soon the accuracy jump to more than 80 %.
 
@@ -81,19 +95,6 @@ This project is a small but great project for me, not because what I achieved in
 
 Visualize using Tensorboard
 ---------------------------
-
-[//]: # (Image References)
-
-[image1]: ./writeup_pics/Long_Valley_Imgur.gif "optimizer"
-[image2]: ./writeup_pics/network.png "Neural Network"
-[image3]: ./writeup_pics/color_code.png "Colors"
-[image4]: ./writeup_pics/overview.png "overview"
-[image5]: ./writeup_pics/validation_acc.png
-[image6]: ./writeup_pics/conv1.png
-[image7]: ./writeup_pics/train_acc.png
-[image8]: ./writeup_pics/validation_loss.png
-[image9]: ./writeup_pics/conv1_structure.png
-[image0]: ./writeup_pics/train_loss.png
 
 * The Graph
 
