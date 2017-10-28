@@ -1,5 +1,4 @@
 ## Project: Build a Traffic Sign Recognition Program
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](https://www.udacity.com/self-driving-car)
 
 Overview
 ---
@@ -13,15 +12,7 @@ We also want you to create a detailed writeup of the project. Check out the [wri
 To meet specifications, the project will require submitting three files: 
 * the Ipython notebook with the code
 * the code exported as an html file
-* a writeup report either as a markdown or pdf file 
-
-Creating a Great Writeup
----
-A great writeup should include the [rubric points](https://review.udacity.com/#!/rubrics/481/view) as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
+* a writeup report either as a markdown or pdf file
 
 The Project
 ---
@@ -49,7 +40,7 @@ During trouble shooting my network, I also read a lot of examples from other peo
 
 1. Optimizer
 
-![](http://3.bp.blogspot.com/-nrtJPrdBWuE/VPmIB46F2aI/AAAAAAAACCw/vaE_B0SVy5k/s400/Long%2BValley%2B-%2BImgur.gif)
+![alt text][./writeup_pics/Long Valley - Imgur.gif]
 
 Above is an amazing demonstration on how different optimizer behave. What I saw was the Adadelta optimizer was very good at dealing with some case that the network was hard to train. So I switched to Adadelta optimizer. Magic happened! Although in the beginning, it was also not learning, but after quite a few epochs, suddenly it start to learn, and soon the accuracy jump to more than 80 %.
 
@@ -87,6 +78,65 @@ https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=hn0ap
 After learning how to use docker, it becomes very easy to deploy project in the cloud, which can save a lot of money.
 
 This project is a small but great project for me, not because what I achieved in the result, but it led me to vast knowledge, making me knows what to explore.
+
+Visualize using Tensorboard
+---------------------------
+
+[//]: # (Image References)
+
+[image1]: ./writeup_pics/Long_Valley_Imgur.gif "optimizer"
+[image2]: ./writeup_pics/network.png "Neural Network"
+[image3]: ./writeup_pics/color_code.png "Colors"
+[image4]: ./writeup_pics/overview.png "overview"
+[image5]: ./writeup_pics/validation_acc.png
+[image6]: ./writeup_pics/conv1.png
+[image7]: ./writeup_pics/train_acc.png
+[image8]: ./writeup_pics/validation_loss.png
+[image9]: ./writeup_pics/conv1_structure.png
+[image0]: ./writeup_pics/train_loss.png
+
+* The Graph
+
+flattern node is disconnected for better view.
+
+![alt text][image2]
+
+below is the conv1 structure, the bn & bn_1 node are batch normalization. There are 3 batch norm layers in the graph.
+
+![alt text][image9]
+
+* Loss & Accuracy in Training vs. Validation
+
+1.Below is the color represent different runs
+
+![alt text][image3]
+
+| Run   |batch size | batch norm    |learn rate |
+|:-----:|:---------:|:-------------:|:---------:|
+| 1     |128        |No		        |0.1        |
+| 2     |128        |No             |0.5        |
+| 3	    |4096       |Yes            |0.5        |
+| 4		|8192       |Yes       		|0.8        |
+
+2. in run1, it is continued until training accuracy is almost always 1, and the loss is near 0. but you can see the validation loss start to increase after some time.
+
+Note: in the validation accuracy and loss curve, the last data points are actually from the test set, so you can see the accuracy dropped and the loss increased.
+
+![alt text][image4]
+
+3. training loss and accuracy curves are very smooth in run2 and run3, because the implementation of batch normalization and bigger batch size, although with bigger learning rate, they were still smooth. Due to training stopped before validation loss increase, the over-fitting problem is managed.
+
+Note: These are smoothed curves for better viewing, the actual spicky curves are light colored.
+
+![alt text][image0]
+
+![alt text][image7]
+
+4. In the validation loss image below, you can see without batch_norm and with small batch size, model can get premature over-fitting. That is, first, validation loss start to increase before it drop to the lowest comparing to run3 and run4, second, the last data point, which is the test set loss, gives too much increase in the loss. the same can be concluded from the validation accuracy chart.
+
+![alt text][image8]
+
+![alt text][image5]
 
 
 ### Dependencies
