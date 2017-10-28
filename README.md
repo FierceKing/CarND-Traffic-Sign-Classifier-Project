@@ -40,7 +40,7 @@ During trouble shooting my network, I also read a lot of examples from other peo
 
 1. Optimizer
 
-![alt text][./writeup_pics/Long Valley - Imgur.gif]
+![alt text][./writeup_pics/Long_Valley_Imgur.gif]
 
 Above is an amazing demonstration on how different optimizer behave. What I saw was the Adadelta optimizer was very good at dealing with some case that the network was hard to train. So I switched to Adadelta optimizer. Magic happened! Although in the beginning, it was also not learning, but after quite a few epochs, suddenly it start to learn, and soon the accuracy jump to more than 80 %.
 
