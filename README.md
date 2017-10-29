@@ -208,7 +208,9 @@ I haven't put images with distortion or rotation, or add special blockage in fro
 
 From the output below, in the first 11 pictures, the network was very confident with his result, although it got wrong in the 11th picture, it made me check what is it actually points to, the result was class 3 "Speed limit (60km/h)", almost there!! The last picture, 25 "Road work", No.... Notice the actual class are not even in the top 5, so it's kind of random guess...
 
-TopKV2(values=array([[  9.99998808e-01,   6.92192089e-07,   4.31497057e-07,
+TopKV2(values=array(
+
+[[  9.99998808e-01,   6.92192089e-07,   4.31497057e-07,
           6.41800000e-08,   1.46565435e-08],
        [  9.99619842e-01,   3.80067824e-04,   6.60506956e-08,
           1.91607086e-09,   7.90609966e-10],
@@ -231,7 +233,11 @@ TopKV2(values=array([[  9.99998808e-01,   6.92192089e-07,   4.31497057e-07,
        [  6.54774904e-01,   1.19296946e-01,   1.17136344e-01,
           1.08741641e-01,   1.55527105e-05],
        [  5.93723714e-01,   3.22844625e-01,   4.64011990e-02,
-          1.23350089e-02,   1.22207869e-02]], dtype=float32), indices=array([[26, 29, 18, 22, 25],
+          1.23350089e-02,   1.22207869e-02]], dtype=float32),
+
+indices=array(
+
+       [[26, 29, 18, 22, 25],
        [40, 37, 18, 33, 39],
        [ 4, 19, 39, 26, 15],
        [35, 34, 40, 12, 38],
@@ -246,6 +252,7 @@ TopKV2(values=array([[  9.99998808e-01,   6.92192089e-07,   4.31497057e-07,
 
 Actual class should be:
 [26, 40, 4, 35, 14, 17, 2, 23, 6, 14, 4, 26]
+
 Others
 ------
 
