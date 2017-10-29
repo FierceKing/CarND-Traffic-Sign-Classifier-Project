@@ -111,7 +111,7 @@ This project is a small but great project for me, not because what I achieved in
 Visualize using Tensorboard
 ---------------------------
 
-###The Graph
+### The Graph
 
 flattern node is disconnected for better view.
 
@@ -161,7 +161,7 @@ In the validation loss image below, you can see without batch_norm and with smal
 Test a Model on New Images
 --------------------------
 
-####Test model with image from internet
+#### Test model with image from internet
 
 I put 12 images in the demo_pics folder
  
@@ -186,7 +186,7 @@ The first 6 signs looks similar to the dataset(properly centered and zoomed, a b
 
 ![alt text][image11]
 
-####The performance on the new imags
+#### The performance on the new imags
 
 after feeding the images into the network, the classifier output as below:
 
